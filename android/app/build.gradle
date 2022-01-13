@@ -33,6 +33,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     compileSdkVersion flutter.compileSdkVersion
+    ndkVersion '23.1.7779620'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -66,6 +67,9 @@ android {
    buildTypes {
        release {
            signingConfig signingConfigs.release
+           ndk {
+               debugSymbolLevel 'full'
+           }
        }
    }
 
